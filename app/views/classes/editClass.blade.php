@@ -1,14 +1,14 @@
 @extends('layouts.default')
 @section('content')
 <div class="page-header">
-<h1 data-icon="calendar"><a href="{{ route('events') }}">Events</a>:: <small>Edit Event</small></h1>
+<h1 data-icon="calendar"><a href="{{ route('classes') }}">Classes</a>:: <small>Edit Class</small></h1>
 </div>
 <div class="panel panel-default">
 	<div class="panel-heading">
     	<h3 class="panel-title" data-icon="pencil">Edit Event</h3>
     </div>
     <div class="panel-body stickyContainer">    
-    	{{ Form::open(array('url' => 'events/add', 'class' => 'form')) }}
+    	{{ Form::open(array('url' => 'classes/add', 'class' => 'form')) }}
         	<div class="row">
                 <div class="col-sm-4">
                     <h3>Class Info</h3>
@@ -61,7 +61,7 @@
                 {{ Form::label('type', 'Type', array('class' => 'control-label')) }}
                 <div class="row">
                 	<div class="col-sm-8">
-                {{ Form::select('type', array('' => 'Select a type', 'weekly' => 'Weekly', 'monthly' => 'Monthly', 'oneTime' => 'One Time'),  null, array('class' => 'form-control classTypeSelector')) }}
+                {{ Form::select('type', array('' => 'Select a type', 'weekly' => 'Weekly', 'monthly' => 'Monthly', 'once' => 'One Time'),  null, array('class' => 'form-control classTypeSelector')) }}
                 	</div>
                      <div class="col-sm-4">
                         <a class="btn btn-danger removeClassTime" data-icon="trash-o"></a>
@@ -167,5 +167,4 @@
         </div>
     </div>
 </div>
-
 @stop

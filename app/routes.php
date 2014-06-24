@@ -12,6 +12,11 @@ Route::get('clients', array(
   'uses' => 'ClientsController@showIndex'
 ));
 
+Route::get('clients/new', array(
+  'as' => 'newClient',
+  'uses' => 'ClientsController@newClient'
+));
+
 Route::get('clients/edit/{id}', array(
   'as' => 'editClient',
   'uses' => 'ClientsController@editClient'
@@ -57,8 +62,11 @@ Route::get('classes/delete/{id}', array(
   'uses' => 'ClassesController@showIndex'
 ));
 
-
-
+Route::post('classes/add', function(){
+	echo '<pre>';
+	print_r($_POST);
+	echo '</pre>';
+});
 
 //TEACHERS ROUTING
 Route::get('teachers', array(

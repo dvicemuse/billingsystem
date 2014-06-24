@@ -1,3 +1,8 @@
+@extends('layouts.default')
+@section('content')
+<div class="page-header">
+    <h1 data-icon="users"><a href="{{ route('clients') }}">Clients</a>:: <small>Add Client</small></h1>
+</div>
 <div class="panel panel-default collapse in @if($errors->has()) in @endif alertSave" id="addClientForm">
 	<div class="panel-heading">
     	<h3 class="panel-title">Edit Client</h3>
@@ -105,3 +110,4 @@
         {{ Form::close() }}
     </div>
 </div>
+@stop

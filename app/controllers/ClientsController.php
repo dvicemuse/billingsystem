@@ -32,4 +32,9 @@ class ClientsController extends BaseController {
 		return $this->layout->content = View::make('clients.editClient')
 			->with('title', 'Edit Client');
 	}
+	
+	public function newClient(){
+		return $this->layout->content = View::make('clients.addClient')
+			->with('title', 'Add Client');
+	}
 }

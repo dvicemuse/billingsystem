@@ -16,7 +16,7 @@ class CreateClassesWeeklyTable extends Migration {
     {
         $table->increments('id', 11);
         $table->string('name',64)->unique();
-        $table->string('description'); // varchar(255)
+        $table->string('description', 255);
         $table->string('date', 24);
         $table->timestamps();
     });
