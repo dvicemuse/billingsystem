@@ -11,6 +11,7 @@
   {{ HTML::style('css/jquery-ui.css') }}  
   {{ HTML::style('css/style.css') }}
   {{ HTML::style('css/bootstrap-formhelpers.min.css') }}
+  {{ HTML::style('css/bootstrapValidator.css') }}
 </head>
 <body>  
 	@include('includes.sidebar') 
@@ -34,14 +35,14 @@
     {{ Modal::make('You have unsaved changes', 'unsavedChanges') }}
     
     <!-- JAVASCRIPT -->
-
-	{{ HTML::script('js/jquery-1.11.0.min.js') }}
-  {{ HTML::script('js/jquery-ui.js') }}
-	{{ HTML::script('js/bootstrap.min.js') }}
-  {{ HTML::script('js/jquery.stickyelement.js') }}
-  {{ HTML::script('js/jquery.dirtyforms.js') }}
-  {{ HTML::script('js/jquery.validate.js') }}
-	{{ HTML::script('js/main.js') }}
-  {{ HTML::script('js/bootstrap-formhelpers.js') }}
+  	{{ HTML::script('js/jquery-1.11.0.min.js') }}
+    {{ HTML::script('js/jquery-ui.js') }}
+  	{{ HTML::script('js/bootstrap.min.js') }}
+    {{ HTML::script('js/jquery.stickyelement.js') }}
+    {{ HTML::script('js/jquery.dirtyforms.js') }}
+    {{ HTML::script('js/jquery.validate.js') }}
+  	{{ HTML::script('js/main.js') }}
+    {{ HTML::script('js/bootstrap-formhelpers.js') }}
+    {{ HTML::script('js/bootstrapValidator.min.js') }}
 </body>
 </html>

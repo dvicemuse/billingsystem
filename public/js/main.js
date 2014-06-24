@@ -7,6 +7,164 @@ $(function(){
 				$(this).html('<i class="fa fa-'+icon+'"></i> '+text);	
 			});
 			
+			//IF BIlLING SAME IS CHECKED/UNCHECKED
+			var getAddressForm = $('#addressForm').html();
+			$('#billingSame').change(function(){
+				if($(this).is(':checked')){
+					$('#ccAddress').html('');	
+				}
+				else{
+					
+					$('#ccAddress').html(getAddressForm);
+					$('#ccAddress #addr1').attr('name', 'card[address][addr1]').removeAttr('id');
+					$('#ccAddress #addr2').attr('name', 'card[address][addr2]').removeAttr('id');
+					$('#ccAddress #city').attr('name', 'card[address][city]').removeAttr('id');
+					$('#ccAddress #state').attr('name', 'card[address][state]').removeAttr('id');
+					
+					//INJECT FORM VALIDATION ON ZIP
+					var newZip = $('#ccAddress #zip').html();
+					var inject = '<i class="form-control-feedback" data-bv-icon-for="zip" style="display: none;"></i><small data-bv-validator="notEmpty" data-bv-validator-for="zip" class="help-block" style="display: none;">The zipcode is required</small><small data-bv-validator="zipCode" data-bv-validator-for="zip" class="help-block" style="display: none;">This is not valid zipcode</small>';
+					$('#ccAddress #zip').after(inject).parent().addClass('has-feedback');
+					//$('#ccAddress #zip').attr('name', 'card[address][zip]').removeArrt('id');
+					
+					
+				}
+			})
+			
+			//FORM VALIDATION
+			$('form').bootstrapValidator({
+				live: 'enabled',
+				trigger: 'focus blur',
+				message: 'This field is required',
+				feedbackIcons: {
+					valid: 'glyphicon glyphicon-ok',
+					invalid: 'glyphicon glyphicon-remove',
+					validating: 'glyphicon glyphicon-refresh'
+				},
+				fields: {
+					email: {
+						validators: {
+							emailAddress: {
+								message: 'This is not a valid email address'
+							}
+						}
+					},
+					phone: {
+						validators: {
+							regexp : {
+								regexp: /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{4,4}?$/,
+								message: 'This is not a valid phone number'
+							}
+						}
+					},
+					zip: {
+						selector: '.zipVal',
+						validators: {
+							notEmpty: {
+								message: 'The zipcode is required'
+							},
+							zipCode: {
+								country: 'US',
+								message: 'This is not valid zipcode'
+							}
+						}
+					},
+					ccNumber: {
+						selector: '.ccNumber',
+						validators: {
+							notEmpty: {
+								message: 'The credit card number is required'
+							},
+							creditCard: {
+								message: 'The credit card number is not valid'
+							}
+						}
+					},
+					
+					cvc: {
+						selector: '.cvcVal',
+						validators: {
+							notEmpty: {
+								message: 'The cvc number is required'
+							},
+							cvv: {
+								message: 'The cvc number is not valid'
+							}
+						}
+					},
+					
+				}
+			});
+			
+			//SETUP PHONE NUMBER VALIDATION
+			$.each($('.phone-format'), function(){
+				$(this).focus(function(){
+					$(this).attr('maxlength', '14');
+					$(this).keypress(function(e){
+						if(
+							e.keyCode == 48 ||
+							e.keyCode == 49 ||
+							e.keyCode == 50 ||
+							e.keyCode == 51 ||
+							e.keyCode == 52 ||
+							e.keyCode == 53 ||
+							e.keyCode == 54 ||
+							e.keyCode == 55 ||
+							e.keyCode == 56 ||
+							e.keyCode == 57						
+						){
+							$(this).keyup(function(e){								
+								if(e.keyCode !== 8){
+									
+									var inputVal = $(this).val();
+									var inputLength = $(this).val().length;
+																		
+									if(inputLength == 1){										
+										if(inputVal !== '(');
+										$(this).val('('+inputVal);	
+									}
+									if(inputLength == 4){
+										$(this).val(inputVal+') ');	
+									}
+									if(inputLength == 9){
+										$(this).val(inputVal+'-');	
+									}	
+								}
+							})
+						}
+						else{
+							e.preventDefault();
+						}					
+					})	
+				})
+			})
+			
+			//ADDITIONAL PACKAGES FOR CLIENTS
+			$('.addPackageBtn').click(function(){
+				var packageCount = $('.packageSelect').length;
+				if(packageCount == 1){
+					$(this).before('<div id="additionalPackages"></div>');	
+				}
+				$('#package0')
+					.clone()
+					.attr('id', 'package'+packageCount)
+					.attr('name', 'package['+packageCount+']')
+					.appendTo('#additionalPackages');
+				$('#package'+packageCount)
+					.wrap('<div class="form-group"><div class="row" id="packageWrap'+packageCount+'"><div class="col-sm-8"></div></div></div>');
+				$('#packageWrap'+packageCount)	
+					.append('<div class="col-sm-4"><a class="btn btn-danger deleteClientPackage"><i class="fa fa-trash-o"></i></a></div>');
+			});
+			
+			$(document).on('click', '.deleteClientPackage', function(){
+				$(this).parent().parent().parent().remove();
+				var packageCount = $('.packageSelect').length;
+				if(packageCount == 1){
+					$('#additionalPackages').remove();
+				}
+			})
+			
+			
 			//DATE PICKER
 			$('.datepicker').datepicker();
 					
@@ -206,24 +364,6 @@ $(function(){
 				stickyEnd = newStickyEnd;				
 				$(removeParent).remove();	
 			})
-
-			$('form').validate({
-				highlight: function(element) {
-					$(element).closest('.form-group').addClass('has-error');
-				},
-				unhighlight: function(element) {
-					$(element).closest('.form-group').removeClass('has-error');
-				},
-				errorElement: 'span',
-				errorClass: 'help-block',
-				errorPlacement: function(error, element) {
-					if(element.parent('.input-group').length) {
-						error.insertAfter(element.parent());
-					} else {
-						error.insertAfter(element);
-					}
-				}
-			});
 			
 			$('#messageModal').modal('show');				
 			$('.confirmModal').click(function(event){
@@ -248,14 +388,14 @@ $(function(){
 			
 			$('form').on('change keyup keydown', 'input, textarea, select', function (e) {
 				$(this).addClass('changed-input');
-				
-			}); 
-			
+			});
+
 			/*$('.sticky').sticky('.stickyContainer', {
 				offset:95,
 				startOffset:78,
-				stopOffset:50			
+				stopOffset:50
 			});	*/
+			});
 			
 			//$('form').dirtyForms();
 			

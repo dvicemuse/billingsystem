@@ -37,10 +37,11 @@ Route::get('clients/deactivate', array(
   'uses' => 'ClientsController@editClient'
 ));
 
-
-Route::post('clients/add', array(
-  'uses'=>'ClientsController@addClient'
-));
+Route::post('clients/add', function(){
+	echo '<pre>';
+	print_r($_POST);
+	echo '</pre>';
+});
 
 
 //CLASSES ROUTING
