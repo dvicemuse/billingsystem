@@ -9,11 +9,13 @@
 		'Sunday'
 	);
 ?>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">Class Schedule</h3>
-  </div>
-  <div class="panel-body">
+<section>
+<div class="row">
+	<h3>Schedule</h3>
+	<div class="col-sm-2">
+    
+    </div>
+    <div class="col-sm-10">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
     @foreach($days as $key=>$day)    	
@@ -50,3 +52,4 @@
     </div>
   </div>
 </div>
+</section>

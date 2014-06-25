@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="bootstrap.min.js" server="digitalisstudios.com/public_html/yoga2/" local="130476003312896695" remote="130476039000000000" Dst="2" />
-<file name="main.js" server="digitalisstudios.com/public_html/yoga2/" local="130477112326588378" remote="130477147800000000" Dst="2" />
-<file name="jquery.dirtyforms.js" server="digitalisstudios.com/public_html/yoga2/" local="130477116417022882" remote="130477152000000000" Dst="2" />
+<file name="bootstrap.min.js" server="digitalisstudios.com/public_html/yoga2/" local="130476003312896695" remote="130480683000000000" Dst="2" />
+<file name="main.js" server="digitalisstudios.com/public_html/yoga2/" local="130480420886003912" remote="130480683000000000" Dst="2" />
+<file name="jquery.dirtyforms.js" server="digitalisstudios.com/public_html/yoga2/" local="130477117074484739" remote="130480683000000000" Dst="2" />
+<file name="bootstrap-formhelpers.js" server="digitalisstudios.com/public_html/yoga2/" local="130365447668214130" remote="130480683000000000" Dst="2" />
+<file name="jquery-1.11.0.min.js" server="digitalisstudios.com/public_html/yoga2/" local="130477650782822766" remote="130480683000000000" Dst="2" />
+<file name="bootstrapValidator.min.js" server="digitalisstudios.com/public_html/yoga2/" local="130480281607104841" remote="130480683000000000" Dst="2" />
+<file name="jquery.form.js" server="digitalisstudios.com/public_html/yoga2/" local="130477812384852783" remote="130480683000000000" Dst="2" />
+<file name="jquery.stickyelement.js" server="digitalisstudios.com/public_html/yoga2/" local="130478092283133003" remote="130480683000000000" Dst="2" />
+<file name="jquery.validate.js" server="digitalisstudios.com/public_html/yoga2/" local="130477828159666995" remote="130480683000000000" Dst="2" />
+<file name="jquery-ui.js" server="digitalisstudios.com/public_html/yoga2/" local="130477651387346178" remote="130480683000000000" Dst="2" />
 </dwsync>

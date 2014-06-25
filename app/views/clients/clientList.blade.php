@@ -1,8 +1,15 @@
-<div class="panel panel-default">
+<section>
+	<div class="row">
+	<h3>List Clients</h3>
+    <div class="col-sm-2">
+    	
+    </div>
+    <div class="col-sm-8">
+<!--<div class="panel panel-default">
 	<div class="panel-heading">
     	<h3 class="panel-title">List Clients</h3>
     </div>
-    <div class="panel-body">
+    <div class="panel-body">-->
     	<table class="table table-striped table-hover">
             <tbody><tr>
                 <td>Id</td>
@@ -28,5 +35,8 @@
             </tr>
             
         </tbody></table>
+    <!--</div>
+</div>-->
+	</div>
     </div>
-</div>
+</section>

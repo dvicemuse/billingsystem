@@ -4,15 +4,14 @@
 <div class="page-header">
 <h1 data-icon="cube"><a href="{{ route('packages') }}">Packages</a>:: <small>Add Package</small></h1>
 </div>
-<div class="panel panel-default">
-	<div class="panel-heading">
-    	<h3 class="panel-title" data-icon="plus">Add A Package</h3>
-    </div>
-    <div class="panel-body stickyContainer">    
+<div class="stickyContainer">
+
     	{{ Form::open(array('url' => 'view-packages/add', 'class' => 'form-horizontal')) }}
+	<section>
         <div class="row">
+        		<h3>Package Info</h3>
         		<div class="col-sm-4">
-                	<h3>Package Info</h3>
+                	
                 </div>
                 <div class="col-sm-4">                    
                     <div class="form-group"> 
@@ -28,10 +27,12 @@
                 	{{ Form::button('Save', array('type' => 'submit', 'class' => 'btn btn-success sticky', 'data-icon' => 'floppy-o')) }}
                 </div>
 			</div>
-            <hr />
+            </section>
+            <section>
             <div class="row">
-            	<div class="col-sm-4">
-                	<h3>Package Pricing</h3>
+            	<h3>Package Pricing</h3>
+                <div class="col-sm-4">
+                	
                 </div>
                 <div class="col-sm-4">
                 	<div class="form-group">                    
@@ -55,8 +56,9 @@
                          ), null, array('class' => 'form-control', 'required')) }}
                  	</div>   
                 </div>
-            </div>             
+            </div>  
+            </section>           
         {{ Form::close() }}
     </div>
-</div>
+
 @stop

@@ -1,8 +1,10 @@
-<div class="panel panel-default">
-	<div class="panel-heading">
-    	<h3 class="panel-title">List Packages</h3>
+<section>
+<div class="row">
+	<h3>List Classes</h3>
+	<div class="col-sm-2">
+    
     </div>
-    <div class="panel-body">
+    <div class="col-sm-8">
     	<table class="table table-striped table-hover">
             <tbody><tr>
                 <td>Name</td>
@@ -27,3 +29,4 @@
         </tbody></table>
     </div>
 </div>
+</section>

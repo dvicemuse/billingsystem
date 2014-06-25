@@ -3,31 +3,35 @@
 <div class="page-header">
     <h1 data-icon="users"><a href="{{ route('clients') }}">Clients</a>:: <small>Add Client</small></h1>
 </div>
-<div class="panel panel-default collapse in @if($errors->has()) in @endif alertSave" id="addClientForm">
+<!--<div class="panel panel-default collapse in @if($errors->has()) in @endif alertSave" id="addClientForm">
 	<div class="panel-heading">
     	<h3 class="panel-title">Edit Client</h3>
     </div>
-    <div class="panel-body stickyContainer">    
+    <div class="panel-body stickyContainer">-->    
     	{{ Form::open(array('url' => 'clients/add', 'class' => 'form')) }}
-        
-        	<div class="row">
-                    <div class="col-sm-4">
-                    <h3>Package</h3>
-               </div>
-               <div class="col-sm-4">
-               		<div class="form-group">
-                    {{ Form::select('package[0]', array('' => 'Select a package', '1' => 'Package 1', '2' => 'Package 2', '3' => 'Package 3'),  null, array('class' => 'form-control packageSelect', 'id' => 'package0', 'data-bv-notempty'=> 'true')) }}
+       <div class="stickyContainer" >  
+        	<section>
+            <div class="row">
+                <h3>Package</h3>
+                <div class="col-sm-4">
+                	
+            	</div>
+                <div class="col-sm-4">
+                    <div class="form-group">
+                        {{ Form::select('package[0]', array('' => 'Select a package', '1' => 'Package 1', '2' => 'Package 2', '3' => 'Package 3'),  null, array('class' => 'form-control packageSelect', 'id' => 'package0', 'data-bv-notempty'=> 'true')) }}
                     </div>
-                    <a class="addPackageBtn btn btn-success" data-icon="plus">Add package another package</a>
-               </div>
-               <div class="col-sm-4">
-                	{{ Form::button('Save', array('type' => 'submit', 'class' => 'btn btn-success has-icon sticky', 'data-icon' => 'floppy-o')) }}
+                    <a class="addPackageBtn btn btn-default" data-icon="plus">Add package another package</a>
+                </div>
+                <div class="col-sm-4">
+                    {{ Form::button('Save', array('type' => 'submit', 'class' => 'btn btn-success has-icon sticky', 'data-icon' => 'floppy-o')) }}
                 </div>
             </div>
-            <hr />
+            </section>
+            <section>
         	<div class="row">
+            <h3>Basic Info</h3>
             <div class="col-sm-4">
-                <h3>Basic Info</h3>
+                
             </div>
             <div class="col-sm-4">
                     <div class="row">
@@ -62,10 +66,14 @@
                     </div>
             </div>
             </div>
-            <hr />
+            </section>
+            
+            <section>
+			
             <div class="row">
+                <h3>Address</h3>
                 <div class="col-sm-4">
-                    <h3>Address</h3>
+                    
 				</div>
                 <div class="col-sm-4" id="addressForm">  
                 	<div class="row">
@@ -109,10 +117,13 @@
                     </div>
                 </div>
             </div>
-            <hr />
+            </section>
+            <section>
+            
             <div class="row">
+            <h3>Billing</h3>
             <div class="col-sm-4">
-            	<h3>Billing</h3>
+            	
 			</div>
             <div class="col-sm-4">
             	<div class="row">
@@ -146,8 +157,7 @@
                             {{ Form::text('card[cvc]', '', array('class' => 'form-control cvcVal', 'data-bv-field' => 'cvc')) }}
                         </div>
                     </div>
-                </div>
-                
+                </div> 
                 <div class="row">
                     <div class="col-sm-6">
                         <div class="form-group">
@@ -163,9 +173,15 @@
                     </div>                    
                 </div>
                 <div id="ccAddress"></div>
+             
             </div>
+             
            </div>
+        	</section>
         {{ Form::close() }}
-    </div>
-</div>
+      	
+        </div>
+       
+   <!--</div>
+</div>-->
 @stop

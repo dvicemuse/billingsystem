@@ -152,9 +152,9 @@ $(function(){
 					.attr('name', 'package['+packageCount+']')
 					.appendTo('#additionalPackages');
 				$('#package'+packageCount)
-					.wrap('<div class="form-group"><div class="row" id="packageWrap'+packageCount+'"><div class="col-sm-8"></div></div></div>');
+					.wrap('<div class="form-group"><div class="row" id="packageWrap'+packageCount+'"><div class="col-sm-10"></div></div></div>');
 				$('#packageWrap'+packageCount)	
-					.append('<div class="col-sm-4"><a class="btn btn-danger deleteClientPackage"><i class="fa fa-trash-o"></i></a></div>');
+					.append('<div class="col-sm-2"><a class="btn btn-default deleteClientPackage"><i class="fa fa-trash-o"></i></a></div>');
 			});
 			
 			$(document).on('click', '.deleteClientPackage', function(){
@@ -165,46 +165,46 @@ $(function(){
 				}
 			})
 			
-			
-			//DATE PICKER
-			$('.datepicker').datepicker();
 					
-			//STICKY
-			additionalOffset = 78;			
-			stickyHeight = $('.sticky').outerHeight();
-			stickyYOffset = $('.sticky').offset().top;
-			stickyParent = $('.sticky').closest('.stickyContainer');
-			stickyParentOffset = $(stickyParent).offset().top;
-			offsetFromParent = stickyYOffset-stickyParentOffset;
-			
-			$(window).resize(function(){				
-				stickyParentHeight = $(stickyParent).outerHeight(true);				
-				stickyParentInnerHeight = $(stickyParent).innerHeight();							
-				stickyStop = stickyStart+stickyParentInnerHeight-stickyHeight-offsetFromParent-offsetFromParent;
-				stickyStopOffset = stickyParentInnerHeight-stickyHeight-offsetFromParent-offsetFromParent;
-			});	
-			
-			stickyStart = stickyParentOffset-additionalOffset;
-			stickyOffset = offsetFromParent+additionalOffset;			
+			if($('.sticky').length > 0){
+				//STICKY
+				additionalOffset = 78;			
+				stickyHeight = $('.sticky').outerHeight();
+				stickyYOffset = $('.sticky').offset().top;
+				stickyParent = $('.sticky').closest('.stickyContainer');
+				stickyParentOffset = $(stickyParent).offset().top;
+				offsetFromParent = stickyYOffset-stickyParentOffset;
 				
-			//INITIAL WINDOW SIZE
-			$(window).trigger('resize');				
-			$(window).scroll(function(){
-				var y = $(window).scrollTop();
-				if(y > stickyStart && y < stickyStop){
-					$('.sticky')
-						.css('position', 'fixed')
-						.css('top', stickyOffset);
-				}
-				else if(y < stickyStart){
-					$('.sticky').attr('style', '');	
-				}
-				else if(y > stickyStop){
-					$('.sticky')
-						.css('position', 'absolute')
-						.css('top', stickyStopOffset);
-				}
-			})
+				$(window).resize(function(){				
+					stickyParentHeight = $(stickyParent).outerHeight(true);				
+					stickyParentInnerHeight = $(stickyParent).innerHeight();							
+					stickyStop = stickyStart+stickyParentInnerHeight-stickyHeight-offsetFromParent-offsetFromParent;
+					stickyStopOffset = stickyParentInnerHeight-stickyHeight-offsetFromParent-offsetFromParent;
+				});	
+				
+				stickyStart = stickyParentOffset-additionalOffset;
+				stickyOffset = offsetFromParent+additionalOffset;			
+					
+				//INITIAL WINDOW SIZE
+				$(window).trigger('resize');				
+				$(window).scroll(function(){
+					var y = $(window).scrollTop();
+					if(y > stickyStart && y < stickyStop){
+						$('.sticky')
+							.css('position', 'fixed')
+							.css('top', stickyOffset);
+					}
+					else if(y < stickyStart){
+						$('.sticky').attr('style', '');	
+					}
+					else if(y > stickyStop){
+						$('.sticky')
+							.css('position', 'absolute')
+							.css('top', stickyStopOffset);
+					}
+				})
+			}
+			
 			
 			
 			//CLASSES ADD DAY AND TIME
@@ -215,7 +215,7 @@ $(function(){
 				$(typeSelector)
 					.clone()
 					.removeClass('hide')
-					.addClass('classTime well')					
+					.addClass('classTime')					
 					.attr('id', 'class_'+countDays)					
 					.appendTo('#classTimes');	
 				$('#class_'+countDays+' select')
@@ -249,7 +249,7 @@ $(function(){
 				var times = '<div class="row">'+startTime+endTime+'</div>';
 				
 				//START THE PARAMS CONTAINER
-				$(parentId).append('<div id="params_'+dayId+'"></div>');
+				$(parentId+' .panel-body').append('<div id="params_'+dayId+'"></div>');
 				
 				if(type == 'weekly'){
 					
@@ -283,11 +283,8 @@ $(function(){
 			
 			
 			$(document).on('click', '.removeClassTime', function(){
-				var removeParent = $(this).parent().parent().parent().parent().parent().parent();
-				var removeParentHeight = $(removeParent).outerHeight();
-				var newStickyEnd = stickyEnd+removeParentHeight;				
-				stickyEnd = newStickyEnd;				
-				$(removeParent).remove();	
+				$(this).closest('.classDay').remove();	
+				$(window).trigger('reize');
 			})
 			
 			$('#messageModal').modal('show');				
@@ -301,7 +298,7 @@ $(function(){
 				
 			})
 			$('.clickableRow a').click(function(){
-				event.stopPropagation();	
+				//event.stopPropagation();	
 			})
 			$('.clickableRow').click(function(){
 				target = $(this).attr('data-target');

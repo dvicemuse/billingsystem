@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="bootstrap-theme.min.css" server="digitalisstudios.com/public_html/yoga2/" local="130476003311576524" remote="130476039000000000" Dst="2" />
-<file name="style.css" server="digitalisstudios.com/public_html/yoga2/" local="130477011488741112" remote="130477047000000000" Dst="2" />
-<file name="bootstrap.min.css" server="digitalisstudios.com/public_html/yoga2/" local="130476003312096593" remote="130476039000000000" Dst="2" />
+<file name="bootstrap-theme.min.css" server="digitalisstudios.com/public_html/yoga2/" local="130476003311576524" remote="130480683600000000" Dst="2" />
+<file name="style.css" server="digitalisstudios.com/public_html/yoga2/" local="130478081748432874" remote="130480683600000000" Dst="2" />
+<file name="bootstrap.min.css" server="digitalisstudios.com/public_html/yoga2/" local="130480343595608150" remote="130480683600000000" Dst="2" />
+<file name="bootstrap-formhelpers.min.css" server="digitalisstudios.com/public_html/yoga2/" local="130343995160000000" remote="130480683600000000" Dst="2" />
+<file name="bootstrapValidator.css" server="digitalisstudios.com/public_html/yoga2/" local="130480281276062031" remote="130480683600000000" Dst="2" />
+<file name="font-awesome.css" server="digitalisstudios.com/public_html/yoga2/" local="130477652794912053" remote="130480683600000000" Dst="2" />
+<file name="font-awesome.min.css" server="digitalisstudios.com/public_html/yoga2/" local="130477652795142105" remote="130480683600000000" Dst="2" />
+<file name="jquery-ui.css" server="digitalisstudios.com/public_html/yoga2/" local="130477653290240826" remote="130480683600000000" Dst="2" />
 </dwsync>
