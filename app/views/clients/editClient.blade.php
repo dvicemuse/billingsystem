@@ -1,7 +1,8 @@
 @extends('layouts.default')
 @section('content')
 <div class="page-header">
-    <h1 data-icon="users"><a href="{{ route('clients') }}">Clients</a>:: <small>Edit Client</small></h1>
+    <h1 data-icon="users" class="pull-left"><a href="{{ route('clients') }}">Clients</a>:: <small>Edit Client</small></h1>
+    <div class="pull-left form-menu"></div>
 </div>
 <!--<div class="panel panel-default collapse in @if($errors->has()) in @endif alertSave" id="addClientForm">
 	<div class="panel-heading">

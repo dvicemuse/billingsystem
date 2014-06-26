@@ -1,13 +1,10 @@
 @extends('layouts.default')
 @section('content')
 <div class="page-header">
-<h1 data-icon="calendar"><a href="{{ route('classes') }}">Classes</a>:: <small>Add Class</small></h1>
+<h1 data-icon="calendar" class="pull-left"><a href="{{ route('classes') }}">Classes</a>:: <small>Add Class</small></h1>
+<div class="pull-left form-menu"></div>
 </div>
-<!--<div class="panel panel-default">
-	<div class="panel-heading">
-    	<h3 class="panel-title" data-icon="pencil">Edit Event</h3>
-    </div>
-    <div class="panel-body stickyContainer">    -->
+
     	{{ Form::open(array('url' => 'classes/add', 'class' => 'form')) }}
 <div class="stickyContainer">
 <section>

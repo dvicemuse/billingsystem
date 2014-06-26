@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="page-header">
-<h1 data-icon="cube"><a href="{{ route('packages') }}">Packages</a>:: <small>Edit Package</small></h1>
+<h1 data-icon="cube" class="pull-left"><a href="{{ route('packages') }}">Packages</a>:: <small>Edit Package</small></h1>
 </div>
 <div class="stickyContainer">
 

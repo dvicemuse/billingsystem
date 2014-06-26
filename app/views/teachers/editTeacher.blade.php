@@ -1,7 +1,8 @@
 @extends('layouts.default')
 @section('content')
 <div class="page-header">
-    <h1 data-icon="users"><a href="{{ route('teachers') }}">Teachers</a>:: <small>Edit Teacher</small></h1>
+    <h1 data-icon="users" class="pull-left"><a href="{{ route('teachers') }}">Teachers</a>:: <small>Edit Teacher</small></h1>
+	<div class="pull-left form-menu"></div>
 </div>
    
     	{{ Form::open(array('url' => 'teachers/update', 'class' => 'form')) }}

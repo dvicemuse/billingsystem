@@ -1,7 +1,8 @@
 @extends('layouts.default')
 @section('content')
 <div class="page-header">
-<h1 data-icon="calendar"><a href="{{ route('classes') }}">Classes</a>:: <small>Edit Class</small></h1>
+<h1 data-icon="calendar" class="pull-left"><a href="{{ route('classes') }}">Classes</a>:: <small>Edit Class</small></h1>
+<div class="pull-left form-menu"></div>
 </div>
 <!--<div class="panel panel-default">
 	<div class="panel-heading">

@@ -13,7 +13,7 @@
   {{ HTML::style('css/bootstrap-formhelpers.min.css') }}
   {{ HTML::style('css/bootstrapValidator.css') }}
 </head>
-<body>  
+<body data-spy="scroll" data-target=".form-menu" >
 	@include('includes.sidebar') 
   <div class="main-content">          
         @if($errors->has())

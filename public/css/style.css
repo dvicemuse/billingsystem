@@ -79,6 +79,21 @@ section:nth-child(even) {
 .modal-sm {
   width: 30%;
 }
+
+section .anchor {
+	margin-top:-128px;	
+	float:left;
+}
+.form-nav {
+	margin-top:30px;
+	margin-left:20px;	
+}
+.form-nav li{
+	display:inline-block;
+}
+.form-nav li.active a {
+	border-bottom:2px solid #428bca;	
+}
 .sidebar {
 	width:200px;
 	height: 100%;
@@ -94,12 +109,22 @@ section:nth-child(even) {
 	list-style:none;
 	padding-left:0;	
 }
+.sidebar ul:hover li.active:after, .sidebar ul:hover li.active a:after{
+	display:none;
+}
+.sidebar ul:hover li.active:hover:after, .sidebar ul:hover li.active a:hover:after{
+	display:block;	
+}
+.sidebar ul li.active a:hover {
+	background:#428bca;
+}
 .sidebar ul li {
 	margin-left:0;
 	padding-left:0;
 	position:relative;
 	text-transform:capitalize;
 }
+
 .sidebar ul li a {
 	display:block;
 	padding:5px 5px 5px 20px;
