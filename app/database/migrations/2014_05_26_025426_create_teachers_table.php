@@ -15,7 +15,7 @@ class CreateTeachersTable extends Migration {
     Schema::create('teachers', function($table)
     {
       $table->increments('id');
-      $table->int('uid');
+      $table->integer('uid');
       $table->string('email')->unique();
       $table->string('name');
       $table->timestamps();

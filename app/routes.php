@@ -69,8 +69,6 @@ Route::post('classes/add', function(){
 	echo '</pre>';
 });
 
-
-
 //TEACHERS ROUTING
 Route::get('teachers', array(
   'as' => 'teachers',

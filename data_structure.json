@@ -1,0 +1,64 @@
+// Schemas
+
+// Databases:
+//   Master
+//   Studio_${STUDIO_NUMBER}
+
+
+// class client side
+
+{
+  "name": "{NAME}"
+  "description": "{DESCRIPTION}"
+  "id": "{ID}" // if pulled from db
+  "times": [
+    {
+      "type":"once",
+      "date":"{DATE}", // eg 06/12/2014
+      "start":{"hour":"06","min":"00"},
+      "end":{"hour":"06","min":"00"}
+    },
+    {
+      "type":"weekly",
+      "day":"{DAY}", // int 0-6
+      "start":{"hour":"06","min":"00"},
+      "end":{"hour":"06","min":"00"}
+    },
+    {
+      "type":"monthly",
+      "week":"{WEEK}", // int 1-4
+      "day":"{DAY}", // int 0-6
+      "start":{"hour":"06","min":"00"},
+      "end":{"hour":"06","min":"00"}
+    }
+  ]
+}
+
+// classes tables
+
+// classes_weekly
+
+
+
+// students table
+{
+  "fname":"{fname}"
+  "lname":"{lname}"
+  "email":"{email}"
+  "phone":"{phone}"
+  "addr":"{addr}"
+  "addr2":"{addr2}"
+  "city":"{city}"
+  "state":"{state}"
+  "zip":"{zip}"
+}
+cards
+
+ccname
+ccnum
+cvc
+ccexp
+billtot
+classes
+active
+extra

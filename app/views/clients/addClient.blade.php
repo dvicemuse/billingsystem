@@ -177,9 +177,11 @@
            </div>
         	</section>
         {{ Form::close() }}
+
       	
         </div>
        
    <!--</div>
 </div>-->
 @stop
+

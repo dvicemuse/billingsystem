@@ -1,4 +1,5 @@
 @extends('layouts.default')
+
 @section('content')
 <div class="page-header">
 <h1 data-icon="calendar" class="pull-left"><a href="{{ route('classes') }}">Classes</a>:: <small>Add Class</small></h1>

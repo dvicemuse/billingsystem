@@ -8,30 +8,6 @@ $(function(){
 				$(this).html('<i class="fa fa-'+icon+'"></i> '+text);	
 			});
 			
-			//CREATE FORM SECTION MENU
-			function convertToSlug(Text)
-			{
-				return Text
-					.toLowerCase()
-					.replace(/ /g,'-')
-					.replace(/[^\w-]+/g,'')
-					;
-			}
-			
-			if($('.form-menu').length > 0){
-				$('.form-menu').append('<ul class="nav form-nav"></ul>');
-				$.each($('section'), function(i,v){
-					var sectionTitle = $(this).find('h3:first').text();
-					var camelId = convertToSlug(sectionTitle);
-					$(this).prepend('<a class="anchor" id="'+camelId+'"></a>');
-					$('.form-nav').append('<li><a href="#'+camelId+'">'+sectionTitle+'</a></li>');
-					
-				}, function(){
-					$(this).scrollspy('refresh')	
-				});
-				
-			}
-			
 			//IF BIlLING SAME IS CHECKED/UNCHECKED
 			var getAddressForm = $('#addressForm').html();
 			$('#billingSame').change(function(){
@@ -293,16 +269,15 @@ $(function(){
 					$('.bfh-datepicker').bfhdatepicker();
 					$(parentId+' .bfh-datepicker input').attr('name', 'time['+dayId+'][date]');					
 				}
-				if(type !== ''){
-					//ADD TIMES
-					$(parentId+' #params_'+dayId).append(times);
-					$('.bfh-timepicker').bfhtimepicker();
-					$(parentId+' .startTime .hour input').attr('name', 'time['+dayId+'][start][hour]');
-					$(parentId+' .startTime .minute input').attr('name', 'time['+dayId+'][start][min]');
-					$(parentId+' .endTime .hour input').attr('name', 'time['+dayId+'][end][hour]');
-					$(parentId+' .endTime .minute input').attr('name', 'time['+dayId+'][end][min]');	
-					$(window).trigger('resize');
-				}
+				
+				//ADD TIMES
+				$(parentId+' #params_'+dayId).append(times);
+				$('.bfh-timepicker').bfhtimepicker();
+				$(parentId+' .startTime .hour input').attr('name', 'time['+dayId+'][start][hour]');
+				$(parentId+' .startTime .minute input').attr('name', 'time['+dayId+'][start][min]');
+				$(parentId+' .endTime .hour input').attr('name', 'time['+dayId+'][end][hour]');
+				$(parentId+' .endTime .minute input').attr('name', 'time['+dayId+'][end][min]');	
+				$(window).trigger('resize');
 			});
 			
 			

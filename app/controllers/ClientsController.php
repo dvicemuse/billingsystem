@@ -18,15 +18,14 @@ class ClientsController extends BaseController {
 		$validator = Validator::make(Input::all(), $rules);
 		if ($validator->fails()){
 			return Redirect::to('clients')->withErrors($validator);
-		}
-		else{
+		} else {
 			return Redirect::to('clients')
 				->with('message', 'Your client was added successfully')
 				->with('modalFooter', '<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>')
 				->with('modalHeader', 'This is the header for the modal')
 				//->with('modalFooter', Modal::close('Close'))
-				;	
-		}		
+				;
+		}
 	}
 	
 	public function editClient($id){
